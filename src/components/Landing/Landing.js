@@ -169,7 +169,7 @@ function Landing() {
                         <p>{headerData.desciption}</p>
 
                         <div className='lcr-buttonContainer'>
-                            <Button onClick={toggleDropdown} className="dropdown-btn">
+                            <Button onClick={toggleDropdown} className={classes.contactBtn}>
                                 Open Menu
                             </Button>
 
