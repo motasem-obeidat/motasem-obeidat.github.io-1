@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,7 +18,6 @@ import {
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
@@ -67,10 +66,6 @@ function Landing() {
     }));
 
     const classes = useStyles();
-
-    const toggleDropdown = () => {
-        setDropdownOpen(!isDropdownOpen);
-    };
 
     return (
         <div className='landing'>
@@ -169,7 +164,7 @@ function Landing() {
                         <p>{headerData.desciption}</p>
 
                         <div className='lcr-buttonContainer'>
-                        {headerData.resumePdf && (
+                            {headerData.resumePdf && (
                                 <a
                                     href={headerData.resumePdf}
                                     download='resume'
@@ -181,20 +176,16 @@ function Landing() {
                                     </Button>
                                 </a>
                             )}
-
-                            <Button onClick={toggleDropdown} className={classes.resumeBtn}>
-                                Open Menu
-                            </Button>
-                            
-                            <div className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
-                                <NavLink to='/#education' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        Education
-                                    </Button>
-                                </NavLink>
-                            </div>
-
-                            
+                            <NavLink
+                                to='/#contacts'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Contact
+                                </Button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
