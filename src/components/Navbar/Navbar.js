@@ -7,9 +7,7 @@ import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
 import { FaUser, FaFolderOpen } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
-
 import './Navbar.css';
 import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -43,18 +41,6 @@ function Navbar() {
             },
             [t.breakpoints.down('xs')]: {
                 fontSize: '2rem',
-            },
-        },
-        MuiDrawer: {
-            padding: '0em 1.8em',
-            width: '14em',
-            fontFamily: 'var(--primaryFont)',
-            background: theme.secondary,
-            overflow: 'hidden',
-            borderTopRightRadius: '40px',
-            borderBottomRightRadius: '40px',
-            [t.breakpoints.down('sm')]: {
-                width: '12em',
             },
         },
         closebtnIcon: {
@@ -130,15 +116,7 @@ function Navbar() {
                     aria-label='Menu'
                 />
             </div>
-            <Drawer
-                variant='temporary'
-                anchor='left'
-                open={open}
-                onClose={handleDrawerClose}
-                classes={{ paper: classes.MuiDrawer }}
-                className={`drawer ${open ? 'drawer-open' : ''}`}
-                disableScrollLock={true}
-            >
+            <div className={`drawer ${open ? 'drawer-open' : ''}`}>
                 <CloseIcon onClick={handleDrawerClose} className={classes.closebtnIcon} />
                 <div className='navLink--container'>
                     <Fade left>
@@ -149,9 +127,9 @@ function Navbar() {
                             </div>
                         </NavLink>
                     </Fade>
-                    {/* Additional links here */}
+                    {/* Add more links here */}
                 </div>
-            </Drawer>
+            </div>
         </div>
     );
 }
