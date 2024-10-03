@@ -169,16 +169,17 @@ function Landing() {
                         <p>{headerData.desciption}</p>
 
                         <div className='lcr-buttonContainer'>
+                            <NavLink to='/#about' smooth={true} spy='true' duration={2000}>
+                                    <Button className={classes.contactBtn}>
+                                        About
+                                    </Button>
+                                </NavLink>
                             <Button onClick={toggleDropdown} className={classes.contactBtn}>
                                 Open Menu
                             </Button>
 
                             <div className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
-                                <NavLink to='/#about' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        About
-                                    </Button>
-                                </NavLink>
+                                
 
                                 <NavLink to='/#resume' smooth={true} spy='true' duration={2000}>
                                     <Button className={classes.contactBtn}>
@@ -215,15 +216,14 @@ function Landing() {
                                         Contact
                                     </Button>
                                 </NavLink>
-
-                                {headerData.resumePdf && (
+                            </div>
+                        {headerData.resumePdf && (
                                     <a href={headerData.resumePdf} download='resume' target='_blank' rel='noreferrer'>
                                         <Button className={classes.resumeBtn}>
                                             Download CV
                                         </Button>
                                     </a>
                                 )}
-                            </div>
                         </div>
                     </div>
                 </div>
