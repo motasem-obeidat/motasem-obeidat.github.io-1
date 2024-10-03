@@ -123,3 +123,32 @@
 .dropdown-list a:last-child {
   margin-bottom: 0;
 }
+
+@media (max-width: 600px) {
+    .landing--container-right {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px; /* Adds padding for smaller screens */
+    }
+    .lcr-buttonContainer {
+        justify-content: center;
+        width: 100%; /* Full width for smaller screens */
+    }
+    .dropdown-list.open {
+        position: fixed; /* Makes dropdown a full-screen overlay on small screens */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        z-index: 1000; /* Ensures it's above all other content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dropdown-list a {
+        font-size: 1.5rem; /* Larger font size for better readability and tap-ability */
+        padding: 15px; /* Larger padding for easier interaction */
+    }
+}
