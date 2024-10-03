@@ -3,24 +3,11 @@ export const achievementData = {
     achievements : [
         {
             id : 1,
-            title : 'Google Cloud',
-            details : 'Google Cloud',
-            date : 'Aug 20, 2019',
-            field : 'Automation',
-            image : 'https:'
+            title : 'New Published Conference Paper: UKYNLP@SMM4H2024',
+            details : 'A paper published at the 9th Social Media Mining for Health (#SMM4H) Workshop. The paper focuses on language model methods for health entity tagging and classification on social media, particularly tasks on non-medical substance use and children’s medical disorder classification.',
+            date : 'Aug 20, 2024',
+            field : 'NLP, Health Informatics',
+            image : 'https://'
         },
     ]
 }
-
-
-// Do not remove any fields.
-// Leave it blank instead as shown below.
-
-/*
-
-export const achievementData = {
-    bio : "",
-    achievements : []
-}
-
-*/
