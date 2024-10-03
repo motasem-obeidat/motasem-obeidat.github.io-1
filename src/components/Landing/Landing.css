@@ -119,26 +119,22 @@
   background-color: #45a049;
 }
 
+/* Dropdown List Styling and Animation */
 .dropdown-list {
-  margin-top: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 }
 
-.dropdown-list ul {
-  list-style-type: none;
-  padding: 0;
+.dropdown-list.open {
+  max-height: 500px; /* Adjust according to the content's height */
 }
 
-.dropdown-list li {
-  padding: 12px 16px;
+.dropdown-list a {
   display: block;
-  color: black;
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 
-.dropdown-list li:hover {
-  background-color: #ddd;
+.dropdown-list a:last-child {
+  margin-bottom: 0;
 }
