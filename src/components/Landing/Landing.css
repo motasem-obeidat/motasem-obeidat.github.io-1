@@ -96,13 +96,13 @@
   width: 350px;  /* Adjust this width to your liking */
   display: flex;
   flex-wrap: wrap; /* Enable wrapping */
-  gap: 10px;  /* Optional: Adds space between buttons */
+  gap: 10px;  /* Adds space between buttons */
   align-items: center;
   justify-content: flex-start; /* Align buttons to the start */
 }
 
 .lcr-buttonContainer a {
-  flex: 0 1 calc(50% - 10px); /* Make two buttons per row, with space between */
+  flex: 0 1 calc(33.33% - 10px); /* Make three buttons per row, with space between */
 }
 
 /* Media Queries for smaller screens */
@@ -132,7 +132,11 @@
   .lcr-buttonContainer {
     margin-top: 1rem;
     flex-wrap: wrap; /* Ensure buttons wrap */
-    width: 250px; /* Adjusted for smaller screen */
+    width: 100%; /* Adjusted for smaller screen */
+  }
+
+  .lcr-buttonContainer a {
+    flex: 0 1 calc(50% - 10px); /* Two buttons per row for medium screens */
   }
 }
 
@@ -153,7 +157,11 @@
   .lcr-buttonContainer {
     margin-top: 1rem;
     flex-wrap: wrap; /* Ensure buttons wrap */
-    width: 200px; /* Adjusted for smaller screen */
+    width: 100%; /* Adjusted for smaller screen */
+  }
+
+  .lcr-buttonContainer a {
+    flex: 0 1 calc(50% - 10px); /* Two buttons per row for smaller screens */
   }
 }
 
