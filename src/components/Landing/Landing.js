@@ -174,6 +174,13 @@ function Landing() {
                                         About
                                     </Button>
                                 </NavLink>
+                        {headerData.resumePdf && (
+                                    <a href={headerData.resumePdf} download='resume' target='_blank' rel='noreferrer'>
+                                        <Button className={classes.resumeBtn}>
+                                            Download CV
+                                        </Button>
+                                    </a>
+                                )}
                             <Button onClick={toggleDropdown} className={classes.contactBtn}>
                                 Open Menu
                             </Button>
@@ -217,13 +224,7 @@ function Landing() {
                                     </Button>
                                 </NavLink>
                             </div>
-                        {headerData.resumePdf && (
-                                    <a href={headerData.resumePdf} download='resume' target='_blank' rel='noreferrer'>
-                                        <Button className={classes.resumeBtn}>
-                                            Download CV
-                                        </Button>
-                                    </a>
-                                )}
+                        
                         </div>
                     </div>
                 </div>
