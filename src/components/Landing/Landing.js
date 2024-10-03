@@ -186,6 +186,16 @@ function Landing() {
                                     Contact
                                 </Button>
                             </NavLink>
+                            <NavLink
+                                to='/#AA'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    News
+                                </Button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
