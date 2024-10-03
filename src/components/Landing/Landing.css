@@ -240,24 +240,3 @@
     top: 20%;
   }
 }
-/* Add this to your Landing.css file */
-
-/* Dropdown container */
-.dropdown-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    position: absolute; /* To allow positioning relative to the button */
-    top: 0; /* Aligns the dropdown with the top of the button */
-    left: 100%; /* Moves the dropdown to the right of the button */
-    margin-left: 10px; /* Optional: Adds a small space between button and dropdown */
-    z-index: 1; /* Ensures dropdown is on top */
-}
-
-/* When open, the dropdown will expand */
-.dropdown-list.open {
-    max-height: 200px; /* Adjust height as necessary */
-    transition: max-height 0.3s ease-in;
-}
-
-
