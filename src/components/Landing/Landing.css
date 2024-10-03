@@ -104,21 +104,6 @@
   flex: 0 1 calc(33.33% - 20px);
 }
 
-.dropdown-btn {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-btn:hover {
-  background-color: #45a049;
-}
-
 /* Dropdown List Styling and Animation */
 .dropdown-list {
   max-height: 0;
