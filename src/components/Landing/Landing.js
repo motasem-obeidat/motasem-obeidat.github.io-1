@@ -175,16 +175,11 @@ function Landing() {
                             </Button>
                             
                             <div className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
-                            <NavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Contact
-                                </Button>
-                            </NavLink>
+                            <NavLink to='/#resume' smooth={true} spy='true' duration={2000}>
+                                    <Button className={classes.contactBtn}>
+                                        Education
+                                    </Button>
+                                </NavLink>
                                      </div>
                             {headerData.resumePdf && (
                                 <a
