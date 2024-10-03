@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,6 +19,7 @@ import {
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
@@ -68,6 +69,20 @@ function Landing() {
 
     const classes = useStyles();
 
+    useEffect(() => {
+        // Add event listener for clicks outside of the dropdown
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
     };
@@ -108,7 +123,7 @@ function Landing() {
                         )}
                         {socialsData.twitter && (
                             <a
-                                href={socialsData.twitter}
+                                href={socialsData.twitter
                                 target='_blank'
                                 rel='noreferrer'
                             >
@@ -121,7 +136,7 @@ function Landing() {
                         )}
                         {socialsData.youtube && (
                             <a
-                                href={socialsData.youtube}
+                                href={socialsData.youtube
                                 target='_blank'
                                 rel='noreferrer'
                             >
@@ -134,7 +149,7 @@ function Landing() {
                         )}
                         {socialsData.blogger && (
                             <a
-                                href={socialsData.blogger}
+                                href={socialsData.blogger
                                 target='_blank'
                                 rel='noreferrer'
                             >
@@ -148,7 +163,7 @@ function Landing() {
                     </div>
                 </div>
                 <img
-                    src={headerData.image}
+                    src={headerData.image
                     alt=''
                     className='landing--img'
                     style={{
@@ -166,65 +181,62 @@ function Landing() {
                     >
                         <h6>{headerData.title}</h6>
                         <h1>{headerData.name}</h1>
-                        <p>{headerData.desciption}</p>
+                        <p>{headerData.description}</p>
 
                         <div className='lcr-buttonContainer'>
-                            <NavLink to='/#about' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        About
-                                    </Button>
-                                </NavLink>
+                            <NavLink to='/#about' smooth={true} spy={true} duration={2000}>
+                                <Button className={classes.contactBtn}>
+                                    About
+                                </Button>
+                            </NavLink>
                         {headerData.resumePdf && (
-                                    <a href={headerData.resumePdf} download='resume' target='_blank' rel='noreferrer'>
-                                        <Button className={classes.resumeBtn}>
-                                            Download CV
-                                        </Button>
-                                    </a>
-                                )}
+                                <a href={headerData.resumePdf} download='resume' target='_blank' rel='noreferrer'>
+                                    <Button className={classes.resumeBtn}>
+                                        Download CV
+                                    </Button>
+                                </a>
+                            )}
                             <Button onClick={toggleDropdown} className={classes.resumeBtn}>
                                 Open Menu
                             </Button>
 
-                            <div className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
-                                
-
-                                <NavLink to='/#resume' smooth={true} spy='true' duration={2000}>
+                            <div ref={dropdownRef} className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
+                                <NavLink to='/#resume' smooth={true} spy={true} duration={2000}>
                                     <Button className={classes.contactBtn}>
                                         Education
                                     </Button>
                                 </NavLink>
 
-                                <NavLink to='/#skills' smooth={true} spy='true' duration={2000}>
+                                <NavLink to='/#skills' smooth={true} spy={true} duration={2000}>
                                     <Button className={classes.contactBtn}>
                                         Skills
                                     </Button>
                                 </NavLink>
 
-                                <NavLink to='/#projects' smooth={true} spy='true' duration={2000}>
+                                <NavLink to='/#projects' smooth={true} spy={true} duration={2000}>
                                     <Button className={classes.contactBtn}>
                                         Projects
                                     </Button>
                                 </NavLink>
 
-                                <NavLink to='/#achievement' smooth={true} spy='true' duration={2000}>
+                                <NavLink to='/#achievement' smooth={true} spy={true} duration={2000}>
                                     <Button className={classes.contactBtn}>
                                         News
                                     </Button>
                                 </NavLink>
 
-                                <NavLink to='/#blog' smooth={true} spy='true' duration={2000}>
+                                <NavLink to='/#blog' smooth={true} spy={true} duration={2000}>
                                     <Button className={classes.contactBtn}>
                                         Blogs
                                     </Button>
                                 </NavLink>
 
-                                <NavLink to='/#contacts' smooth={true} spy='true' duration={2000}>
+                                <NavLink to='/#contacts' smooth={true} spy={true} duration={2000}>
                                     <Button className={classes.contactBtn}>
                                         Contact
                                     </Button>
                                 </NavLink>
                             </div>
-                        
                         </div>
                     </div>
                 </div>
