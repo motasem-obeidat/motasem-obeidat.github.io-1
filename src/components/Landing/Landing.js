@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,6 +18,7 @@ import {
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
@@ -66,6 +67,10 @@ function Landing() {
     }));
 
     const classes = useStyles();
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!isDropdownOpen);
+    };
 
     return (
         <div className='landing'>
@@ -176,6 +181,7 @@ function Landing() {
                                     </Button>
                                 </a>
                             )}
+                            <div className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
                             <NavLink
                                 to='/#contacts'
                                 smooth={true}
@@ -186,6 +192,7 @@ function Landing() {
                                     Contact
                                 </Button>
                             </NavLink>
+                                     </div>
                         </div>
                     </div>
                 </div>
