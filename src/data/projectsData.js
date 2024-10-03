@@ -1,4 +1,4 @@
-import one from '../assets/svg/projects/one.svg'
+// import one from '../assets/svg/projects/one.svg'
 
 
 export const projectsData = [
