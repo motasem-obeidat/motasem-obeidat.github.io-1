@@ -93,7 +93,7 @@
 /* Button container styling */
 .lcr-buttonContainer {
   margin-top: 2rem;
-  width: 350px;  /* Adjust this width to your liking */
+  width: 100%;  /* Make the container wider */
   display: flex;
   flex-wrap: wrap; /* Enable wrapping */
   gap: 10px;  /* Adds space between buttons */
@@ -102,7 +102,7 @@
 }
 
 .lcr-buttonContainer a {
-  flex: 0 1 calc(33.33% - 10px); /* Make three buttons per row, with space between */
+  flex: 0 1 calc(33.33% - 20px); /* Ensure three buttons per row, with space */
 }
 
 /* Media Queries for smaller screens */
