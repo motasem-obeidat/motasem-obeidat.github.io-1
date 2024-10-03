@@ -163,7 +163,92 @@ function Landing() {
                         <h1>{headerData.name}</h1>
                         <p>{headerData.desciption}</p>
 
+                                    
                         <div className='lcr-buttonContainer'>
+
+                        <NavLink
+                                to='/#about'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    About
+                                </Button>
+                            </NavLink>
+
+                        <NavLink
+                                to='/#resume'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Education
+                                </Button>
+                            </NavLink>
+
+
+                        <NavLink
+                                to='/#skills'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Skills
+                                </Button>
+                            </NavLink>
+
+
+                        <NavLink
+                                to='/#projects'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Projects
+                                </Button>
+                            </NavLink>
+
+
+                        <NavLink
+                                to='/#achievement'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    News
+                                </Button>
+                            </NavLink>
+
+
+
+                        <NavLink
+                                to='/#blog'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Blogs
+                                </Button>
+                            </NavLink>
+
+                         <NavLink
+                                to='/#contacts'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Contact
+                                </Button>
+                            </NavLink>
+
+
                             {headerData.resumePdf && (
                                 <a
                                     href={headerData.resumePdf}
@@ -176,77 +261,8 @@ function Landing() {
                                     </Button>
                                 </a>
                             )}
-                            <NavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Contact
-                                </Button>
-                            </NavLink>
-                            <NavLink
-                                to='/#achievement'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    News
-                                </Button>
-                            </NavLink>
-                            <NavLink
-                                to='/#about'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    About
-                                </Button>
-                            </NavLink>
-                            <NavLink
-                                to='/#skills'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Skills
-                                </Button>
-                            </NavLink>
-                            
-                            <NavLink
-                                to='/#resume'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Education
-                                </Button>
-                            </NavLink>
-                            <NavLink
-                                to='/#projects'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Projects
-                                </Button>
-                            </NavLink>
-                            <NavLink
-                                to='/#blog'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Blogs
-                                </Button>
-                            </NavLink>
+                      
+                       
                         </div>
                     </div>
                 </div>
