@@ -196,6 +196,56 @@ function Landing() {
                                     News
                                 </Button>
                             </NavLink>
+                            <NavLink
+                                to='/#about'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    About
+                                </Button>
+                            </NavLink>
+                            <NavLink
+                                to='/#skills'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Skills
+                                </Button>
+                            </NavLink>
+                            <NavLink
+                                to='/#skills'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Skills
+                                </Button>
+                            </NavLink>
+                            <NavLink
+                                to='/#education'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Education
+                                </Button>
+                            </NavLink>
+                            <NavLink
+                                to='/#projects'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Projects
+                                </Button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
