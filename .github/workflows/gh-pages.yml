@@ -19,7 +19,7 @@ jobs:
           node-version: '16'  # Adjust the version if necessary
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build project
         run: npm run build
@@ -29,4 +29,3 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./build  # The folder where the built files are located (adjust if necessary)
-
