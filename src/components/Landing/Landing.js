@@ -218,7 +218,7 @@ function Landing() {
                             </NavLink>
                             
                             <NavLink
-                                to='/#education'
+                                to='/#resume'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
@@ -235,6 +235,16 @@ function Landing() {
                             >
                                 <Button className={classes.contactBtn}>
                                     Projects
+                                </Button>
+                            </NavLink>
+                            <NavLink
+                                to='/#blog'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Blogs
                                 </Button>
                             </NavLink>
                         </div>
