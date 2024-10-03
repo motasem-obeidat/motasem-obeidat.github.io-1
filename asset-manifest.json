@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.d276d4c9.chunk.css",
-    "main.js": "/static/js/main.08bd07cc.chunk.js",
-    "main.js.map": "/static/js/main.08bd07cc.chunk.js.map",
+    "main.js": "/static/js/main.1cedb752.chunk.js",
+    "main.js.map": "/static/js/main.1cedb752.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.70cc97e2.js",
     "runtime-main.js.map": "/static/js/runtime-main.70cc97e2.js.map",
     "static/css/2.19627560.chunk.css": "/static/css/2.19627560.chunk.css",
@@ -27,8 +27,6 @@
     "static/media/blueTheme-girl.232e4a4f.svg": "/static/media/blueTheme-girl.232e4a4f.svg",
     "static/media/bootstrap.19a2d2ff.svg": "/static/media/bootstrap.19a2d2ff.svg",
     "static/media/bulma.5910d441.svg": "/static/media/bulma.5910d441.svg",
-    "static/media/bwTheme-boy.fbbb191f.svg": "/static/media/bwTheme-boy.fbbb191f.svg",
-    "static/media/bwTheme-girl.c74f28ac.svg": "/static/media/bwTheme-girl.c74f28ac.svg",
     "static/media/c.77377419.svg": "/static/media/c.77377419.svg",
     "static/media/canva.b96f915b.svg": "/static/media/canva.b96f915b.svg",
     "static/media/capacitorjs.7517cfe2.svg": "/static/media/capacitorjs.7517cfe2.svg",
@@ -45,6 +43,7 @@
     "static/media/csharp.8f35e178.svg": "/static/media/csharp.8f35e178.svg",
     "static/media/css.43b6f4bd.svg": "/static/media/css.43b6f4bd.svg",
     "static/media/dart.30bf58d8.svg": "/static/media/dart.30bf58d8.svg",
+    "static/media/dazzle-blog-post-article.c242e317.gif": "/static/media/dazzle-blog-post-article.c242e317.gif",
     "static/media/deno.96d4a63d.svg": "/static/media/deno.96d4a63d.svg",
     "static/media/django.d51a8aa4.svg": "/static/media/django.d51a8aa4.svg",
     "static/media/docker.a6221ab3.svg": "/static/media/docker.a6221ab3.svg",
@@ -143,6 +142,6 @@
     "static/css/2.19627560.chunk.css",
     "static/js/2.6b70102a.chunk.js",
     "static/css/main.d276d4c9.chunk.css",
-    "static/js/main.08bd07cc.chunk.js"
+    "static/js/main.1cedb752.chunk.js"
   ]
 }
