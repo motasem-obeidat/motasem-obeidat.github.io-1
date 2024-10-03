@@ -90,15 +90,22 @@
   opacity: 0.7;
 }
 
+/* Button container styling */
 .lcr-buttonContainer {
   margin-top: 2rem;
-  width: 350px;
+  width: 350px;  /* Adjust this width to your liking */
   display: flex;
+  flex-wrap: wrap; /* Enable wrapping */
+  gap: 10px;  /* Optional: Adds space between buttons */
   align-items: center;
-  justify-content: space-between;
-  font-family: "var(--primaryFont)", sans-serif;
+  justify-content: flex-start; /* Align buttons to the start */
 }
 
+.lcr-buttonContainer a {
+  flex: 0 1 calc(50% - 10px); /* Make two buttons per row, with space between */
+}
+
+/* Media Queries for smaller screens */
 @media (max-width: 1100px) {
   .landing--img {
     --img-size: 350px;
@@ -124,10 +131,8 @@
 
   .lcr-buttonContainer {
     margin-top: 1rem;
-    flex-direction: column;
-    width: 200px;
-    height: 120px;
-    align-items: flex-start;
+    flex-wrap: wrap; /* Ensure buttons wrap */
+    width: 250px; /* Adjusted for smaller screen */
   }
 }
 
@@ -147,13 +152,8 @@
 
   .lcr-buttonContainer {
     margin-top: 1rem;
-    flex-direction: column;
-    width: 200px;
-    height: 120px;
-    align-items: flex-start;
-  }
-  .lcr-buttonContainer button:nth-child(2) {
-    display: none;
+    flex-wrap: wrap; /* Ensure buttons wrap */
+    width: 200px; /* Adjusted for smaller screen */
   }
 }
 
@@ -210,11 +210,12 @@
   .lcr-buttonContainer {
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap; /* Ensure buttons wrap */
     align-items: center;
     justify-content: center;
   }
-  .lcr-buttonContainer button {
-    margin-top: -20%;
+  .lcr-buttonContainer a {
+    flex: 1 1 100%; /* Full width for small screens */
   }
 }
 
