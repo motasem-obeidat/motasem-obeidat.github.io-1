@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,6 +18,7 @@ import {
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
@@ -66,6 +67,10 @@ function Landing() {
     }));
 
     const classes = useStyles();
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!isDropdownOpen);
+    };
 
     return (
         <div className='landing'>
@@ -163,10 +168,8 @@ function Landing() {
                         <h1>{headerData.name}</h1>
                         <p>{headerData.desciption}</p>
 
-                                    
                         <div className='lcr-buttonContainer'>
-
-                        <NavLink
+                            <NavLink
                                 to='/#about'
                                 smooth={true}
                                 spy='true'
@@ -177,77 +180,19 @@ function Landing() {
                                 </Button>
                             </NavLink>
 
-                        <NavLink
-                                to='/#resume'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Education
-                                </Button>
-                            </NavLink>
+                            <Button onClick={toggleDropdown} className="dropdown-btn">
+                                Open List
+                            </Button>
 
-
-                        <NavLink
-                                to='/#skills'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Skills
-                                </Button>
-                            </NavLink>
-
-
-                        <NavLink
-                                to='/#projects'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Projects
-                                </Button>
-                            </NavLink>
-
-
-                        <NavLink
-                                to='/#achievement'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    News
-                                </Button>
-                            </NavLink>
-
-
-
-                        <NavLink
-                                to='/#blog'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Blogs
-                                </Button>
-                            </NavLink>
-
-                         <NavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Contact
-                                </Button>
-                            </NavLink>
-
+                            {isDropdownOpen && (
+                                <div className="dropdown-list">
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                        <li>Option 3</li>
+                                    </ul>
+                                </div>
+                            )}
 
                             {headerData.resumePdf && (
                                 <a
@@ -261,8 +206,6 @@ function Landing() {
                                     </Button>
                                 </a>
                             )}
-                      
-                       
                         </div>
                     </div>
                 </div>
