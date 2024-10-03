@@ -112,7 +112,8 @@
 }
 
 .dropdown-list.open {
-  max-height: 500px; /* Adjust according to the content's height */
+  max-height: none;
+  overflow-y: auto; /* Scroll if content is too long */
 }
 
 .dropdown-list a {
@@ -122,4 +123,26 @@
 
 .dropdown-list a:last-child {
   margin-bottom: 0;
+}
+
+/* Responsive Styling for Smaller Screens */
+@media only screen and (max-width: 600px) {
+  .landing--container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .landing--img {
+    width: 80%;
+    height: auto;
+  }
+
+  .lcr-buttonContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-list a {
+    width: 100%;
+  }
 }
