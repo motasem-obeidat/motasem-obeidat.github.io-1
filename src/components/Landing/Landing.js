@@ -243,7 +243,7 @@ function Landing() {
                                 spy='true'
                                 duration={2000}
                             >
-                                <Button className={classes.resumeBtn}>
+                                <Button className={classes.contactBtn}>
                                     Contact
                                 </Button>
                             </NavLink>
