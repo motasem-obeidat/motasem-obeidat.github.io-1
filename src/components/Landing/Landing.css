@@ -240,3 +240,19 @@
     top: 20%;
   }
 }
+
+/* Add this at the bottom of your Landing.css file */
+
+/* Initially hide the dropdown */
+.dropdown-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* When open, reveal the dropdown with animation */
+.dropdown-list.open {
+    max-height: 200px; /* Adjust height as needed for your dropdown */
+    transition: max-height 0.3s ease-in;
+}
+
