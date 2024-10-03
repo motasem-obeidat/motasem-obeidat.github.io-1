@@ -123,3 +123,52 @@
 .dropdown-list a:last-child {
   margin-bottom: 0;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .landing {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .landing--container {
+    flex-direction: column;
+  }
+
+  .landing--img {
+    --img-size: 200px; /* Reduce image size on mobile */
+    left: 50%; /* Center the image */
+    top: 1rem;
+  }
+
+  .landing--container-left, .landing--container-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .lcr--content, .lcl--content {
+    margin: 1rem;
+    width: 90%; /* Adjust to fit the screen width */
+  }
+
+  .lcr--content h1 {
+    font-size: 2rem;
+  }
+
+  .lcr--content p {
+    font-size: 1rem;
+  }
+
+  .lcr-buttonContainer {
+    justify-content: center;
+  }
+
+  .lcr-buttonContainer a, .lcr-buttonContainer .MuiButton-root {
+    width: 100%; /* Full width buttons on mobile */
+  }
+
+  .dropdown-list a {
+    width: 100%;
+  }
+}
