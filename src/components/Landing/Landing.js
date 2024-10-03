@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,61 +18,54 @@ import {
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     const useStyles = makeStyles((t) => ({
-    resumeBtn: {
-        color: theme.primary,
-        borderRadius: '30px',
-        textTransform: 'inherit',
-        textDecoration: 'none',
-        width: '100%', // Make button full width for small devices
-        fontSize: '1rem',
-        fontWeight: '500',
-        height: '50px',
-        fontFamily: 'var(--primaryFont)',
-        border: `3px solid ${theme.primary}`,
-        transition: '100ms ease-out',
-        '&:hover': {
-            backgroundColor: theme.tertiary,
+        resumeBtn: {
+            color: theme.primary,
+            borderRadius: '30px',
+            textTransform: 'inherit',
+            textDecoration: 'none',
+            width: '150px',
+            fontSize: '1rem',
+            fontWeight: '500',
+            height: '50px',
+            fontFamily: 'var(--primaryFont)',
+            border: `3px solid ${theme.primary}`,
+            transition: '100ms ease-out',
+            '&:hover': {
+                backgroundColor: theme.tertiary,
+                color: theme.secondary,
+                border: `3px solid ${theme.tertiary}`,
+            },
+            [t.breakpoints.down('sm')]: {
+                width: '180px',
+            },
+        },
+        contactBtn: {
+            backgroundColor: theme.primary,
             color: theme.secondary,
-            border: `3px solid ${theme.tertiary}`,
+            borderRadius: '30px',
+            textTransform: 'inherit',
+            textDecoration: 'none',
+            width: '150px',
+            height: '50px',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'var(--primaryFont)',
+            border: `3px solid ${theme.primary}`,
+            transition: '100ms ease-out',
+            '&:hover': {
+                backgroundColor: theme.secondary,
+                color: theme.tertiary,
+                border: `3px solid ${theme.tertiary}`,
+            },
+            [t.breakpoints.down('sm')]: {
+                display: 'none',
+            },
         },
-        [t.breakpoints.down('sm')]: {
-            width: '100%', // Full width button for small devices
-        },
-    },
-    contactBtn: {
-        backgroundColor: theme.primary,
-        color: theme.secondary,
-        borderRadius: '30px',
-        textTransform: 'inherit',
-        textDecoration: 'none',
-        width: '100%', // Full width for smaller screens
-        height: '50px',
-        fontSize: '1rem',
-        fontWeight: '500',
-        fontFamily: 'var(--primaryFont)',
-        border: `3px solid ${theme.primary}`,
-        transition: '100ms ease-out',
-        '&:hover': {
-            backgroundColor: theme.secondary,
-            color: theme.tertiary,
-            border: `3px solid ${theme.tertiary}`,
-        },
-        [t.breakpoints.down('sm')]: {
-            display: 'block',
-            width: '100%', // Full width for small devices
-        },
-    },
-}));
-
+    }));
 
     const classes = useStyles();
-
-    const toggleDropdown = () => {
-        setDropdownOpen(!isDropdownOpen);
-    };
 
     return (
         <div className='landing'>
@@ -170,63 +163,106 @@ function Landing() {
                         <h1>{headerData.name}</h1>
                         <p>{headerData.desciption}</p>
 
+                                    
                         <div className='lcr-buttonContainer'>
-                            <NavLink to='/#about' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        About
-                                    </Button>
-                                </NavLink>
-                        {headerData.resumePdf && (
-                                    <a href={headerData.resumePdf} download='resume' target='_blank' rel='noreferrer'>
-                                        <Button className={classes.resumeBtn}>
-                                            Download CV
-                                        </Button>
-                                    </a>
-                                )}
-                            <Button onClick={toggleDropdown} className={classes.resumeBtn}>
-                                Open Menu
-                            </Button>
 
-                            <div className={`dropdown-list ${isDropdownOpen ? 'open' : ''}`}>
-                                
+                        <NavLink
+                                to='/#about'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    About
+                                </Button>
+                            </NavLink>
 
-                                <NavLink to='/#resume' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        Education
-                                    </Button>
-                                </NavLink>
+                        <NavLink
+                                to='/#resume'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Education
+                                </Button>
+                            </NavLink>
 
-                                <NavLink to='/#skills' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        Skills
-                                    </Button>
-                                </NavLink>
 
-                                <NavLink to='/#projects' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        Projects
-                                    </Button>
-                                </NavLink>
+                        <NavLink
+                                to='/#skills'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Skills
+                                </Button>
+                            </NavLink>
 
-                                <NavLink to='/#achievement' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        News
-                                    </Button>
-                                </NavLink>
 
-                                <NavLink to='/#blog' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        Blogs
-                                    </Button>
-                                </NavLink>
+                        <NavLink
+                                to='/#projects'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Projects
+                                </Button>
+                            </NavLink>
 
-                                <NavLink to='/#contacts' smooth={true} spy='true' duration={2000}>
-                                    <Button className={classes.contactBtn}>
-                                        Contact
+
+                        <NavLink
+                                to='/#achievement'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    News
+                                </Button>
+                            </NavLink>
+
+
+
+                        <NavLink
+                                to='/#blog'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Blogs
+                                </Button>
+                            </NavLink>
+
+                         <NavLink
+                                to='/#contacts'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <Button className={classes.contactBtn}>
+                                    Contact
+                                </Button>
+                            </NavLink>
+
+
+                            {headerData.resumePdf && (
+                                <a
+                                    href={headerData.resumePdf}
+                                    download='resume'
+                                    target='_blank'
+                                    rel='noreferrer'
+                                >
+                                    <Button className={classes.resumeBtn}>
+                                        Download CV
                                     </Button>
-                                </NavLink>
-                            </div>
-                        
+                                </a>
+                            )}
+                      
+                       
                         </div>
                     </div>
                 </div>
