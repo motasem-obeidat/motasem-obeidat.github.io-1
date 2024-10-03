@@ -147,7 +147,7 @@ function Landing() {
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaBlogger
+                                <FaMediumM
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
                                     aria-label='Medium'
