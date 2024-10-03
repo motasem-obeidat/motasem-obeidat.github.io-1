@@ -1,0 +1,125 @@
+.landing {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.landing--img {
+  --img-size: 400px;
+  position: absolute;
+  left: 35%;
+  transform: translateX(-50%);
+  width: var(--img-size);
+  height: var(--img-size);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+}
+
+.landing--container-left {
+  flex: 35%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.lcl--content {
+  margin: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.landing--social {
+  font-size: 35px;
+  margin: 0 1rem;
+  transition: transform 0.5s;
+}
+
+.landing--social:hover {
+  transform: scale(1.2);
+}
+
+.landing--container-right {
+  flex: 65%;
+  height: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lcr--content {
+  width: 45%;
+  margin-right: 7rem;
+  font-family: var(--primaryFont);
+  font-style: normal;
+}
+
+.lcr--content h6 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: -0.85rem;
+  opacity: 0.8;
+}
+
+.lcr--content h1 {
+  font-weight: 600;
+  font-size: 3.25rem;
+  line-height: 110%;
+  margin: 1rem 0;
+}
+
+.lcr--content p {
+  margin-top: 1.45rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+  opacity: 0.7;
+}
+
+.lcr-buttonContainer {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lcr-buttonContainer a {
+  flex: 0 1 calc(33.33% - 20px);
+}
+
+/* Dropdown List Styling and Animation */
+.dropdown-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.dropdown-list.open {
+  max-height: 500px; /* Adjust according to the content's height */
+}
+
+.dropdown-list a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dropdown-list a:last-child {
+  margin-bottom: 0;
+}
