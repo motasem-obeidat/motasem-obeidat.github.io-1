@@ -187,7 +187,7 @@ function Landing() {
                                 </Button>
                             </NavLink>
                             <NavLink
-                                to='/#AA'
+                                to='/#achievement'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
