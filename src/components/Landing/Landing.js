@@ -181,7 +181,7 @@ function Landing() {
                                         </Button>
                                     </a>
                                 )}
-                            <Button onClick={toggleDropdown} className={classes.contactBtn}>
+                            <Button onClick={toggleDropdown} className={classes.resumeBtn}>
                                 Open Menu
                             </Button>
 
