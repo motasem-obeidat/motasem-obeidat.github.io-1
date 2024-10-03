@@ -54,39 +54,145 @@
   transform: scale(1.2);
 }
 
-/* Mobile responsiveness */
-@media only screen and (max-width: 768px) {
+.landing--container-right {
+  flex: 65%;
+  height: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lcr--content {
+  width: 45%;
+  margin-right: 7rem;
+  font-family: var(--primaryFont);
+  font-style: normal;
+}
+
+.lcr--content h6 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: -0.85rem;
+  opacity: 0.8;
+}
+
+.lcr--content h1 {
+  font-weight: 600;
+  font-size: 3.25rem;
+  line-height: 110%;
+  margin: 1rem 0;
+}
+
+.lcr--content p {
+  margin-top: 1.45rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+  opacity: 0.7;
+}
+
+.lcr-buttonContainer {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lcr-buttonContainer a {
+  flex: 0 1 calc(33.33% - 20px);
+}
+
+.dropdown-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.dropdown-list.open {
+  max-height: 500px;
+}
+
+.dropdown-list a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dropdown-list a:last-child {
+  margin-bottom: 0;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
   .landing {
-    height: auto; /* Allow the height to adjust based on content */
-    flex-direction: column; /* Stack elements vertically */
+    height: auto;
+    padding: 2rem 0;
+    display: block; /* Prevent layout issues */
+  }
+
+  .landing--container {
+    flex-direction: column;
+    padding: 0;
   }
 
   .landing--img {
-    --img-size: 250px; /* Reduce image size */
-    left: 50%; /* Center image horizontally */
+    --img-size: 180px; /* Further reduce image size for mobile */
+    left: 50%;
+    top: 0;
     transform: translateX(-50%);
   }
 
-  .lcl--content {
-    margin: 1.5rem; /* Reduce margin */
+  .landing--container-left, .landing--container-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
-  .landing--social {
-    font-size: 25px; /* Reduce size of social icons */
-    margin: 0 0.5rem; /* Reduce space between social icons */
+  .lcr--content, .lcl--content {
+    margin: 1rem;
+    width: 90%;
+  }
+
+  .lcr--content h1 {
+    font-size: 1.8rem; /* Reduce title size */
+  }
+
+  .lcr--content p {
+    font-size: 1rem;
+  }
+
+  .lcr-buttonContainer {
+    justify-content: center;
+  }
+
+  .lcr-buttonContainer a, .lcr-buttonContainer .MuiButton-root {
+    width: 100%; /* Full width buttons on mobile */
+  }
+
+  .dropdown-list a {
+    width: 100%;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 576px) {
+  /* Target iPhone SE, 5, or smaller screens */
   .landing--img {
-    --img-size: 200px; /* Further reduce image size for smaller screens */
+    --img-size: 140px; /* Even smaller image size for tiny screens */
   }
 
-  .lcl--content {
-    margin: 1rem; /* Further reduce margin */
+  .lcr--content h1 {
+    font-size: 1.5rem;
   }
 
-  .landing--social {
-    font-size: 20px; /* Further reduce size of social icons */
+  .lcr--content p {
+    font-size: 0.9rem;
+  }
+
+  .lcr--content {
+    margin-right: 0;
+    width: 80%;
   }
 }
