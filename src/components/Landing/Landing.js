@@ -38,7 +38,7 @@ function Landing() {
         border: `3px solid ${theme.tertiary}`,
       },
       [t.breakpoints.down('sm')]: {
-        width: '100%', // Make button full width on mobile
+        width: '100%', // Full width on mobile
       },
     },
     contactBtn: {
@@ -60,8 +60,7 @@ function Landing() {
         border: `3px solid ${theme.tertiary}`,
       },
       [t.breakpoints.down('sm')]: {
-        display: 'block',
-        width: '100%', // Make button full width on mobile
+        width: '100%', // Full width on mobile
       },
     },
   }));
@@ -166,7 +165,7 @@ function Landing() {
           >
             <h6>{headerData.title}</h6>
             <h1>{headerData.name}</h1>
-            <p>{headerData.desciption}</p>
+            <p>{headerData.description}</p>
 
             <div className='lcr-buttonContainer'>
               <NavLink to='/#about' smooth={true} spy='true' duration={2000}>
