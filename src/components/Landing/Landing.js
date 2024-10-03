@@ -14,6 +14,7 @@ import {
     FaGithub,
     FaYoutube,
     FaBlogger,
+    FaMediumM,
 } from 'react-icons/fa';
 
 function Landing() {
@@ -137,6 +138,19 @@ function Landing() {
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
                                     aria-label='Blogger'
+                                />
+                            </a>
+                        )}
+                        {socialsData.medium && (
+                            <a
+                                href={socialsData.medium}
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                <FaBlogger
+                                    className='landing--social'
+                                    style={{ color: theme.secondary }}
+                                    aria-label='Medium'
                                 />
                             </a>
                         )}
