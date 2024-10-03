@@ -169,6 +169,18 @@ function Landing() {
                         <p>{headerData.desciption}</p>
 
                         <div className='lcr-buttonContainer'>
+                        {headerData.resumePdf && (
+                                <a
+                                    href={headerData.resumePdf}
+                                    download='resume'
+                                    target='_blank'
+                                    rel='noreferrer'
+                                >
+                                    <Button className={classes.resumeBtn}>
+                                        Download CV
+                                    </Button>
+                                </a>
+                            )}
 
                             <Button onClick={toggleDropdown} className={classes.resumeBtn}>
                                 Open Menu
@@ -182,18 +194,7 @@ function Landing() {
                                 </NavLink>
                             </div>
 
-                            {headerData.resumePdf && (
-                                <a
-                                    href={headerData.resumePdf}
-                                    download='resume'
-                                    target='_blank'
-                                    rel='noreferrer'
-                                >
-                                    <Button className={classes.resumeBtn}>
-                                        Download CV
-                                    </Button>
-                                </a>
-                            )}
+                            
                         </div>
                     </div>
                 </div>
