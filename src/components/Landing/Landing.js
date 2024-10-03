@@ -216,16 +216,7 @@ function Landing() {
                                     Skills
                                 </Button>
                             </NavLink>
-                            <NavLink
-                                to='/#skills'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Skills
-                                </Button>
-                            </NavLink>
+                            
                             <NavLink
                                 to='/#education'
                                 smooth={true}
