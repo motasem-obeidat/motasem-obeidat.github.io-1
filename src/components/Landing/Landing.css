@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .landing--container {
@@ -11,6 +12,7 @@
   justify-content: center;
   height: 100%;
   position: relative;
+  flex-wrap: wrap; /* Prevent overflow */
 }
 
 .landing--img {
@@ -104,7 +106,6 @@
   flex: 0 1 calc(33.33% - 20px);
 }
 
-/* Dropdown List Styling and Animation */
 .dropdown-list {
   max-height: 0;
   overflow: hidden;
@@ -112,7 +113,7 @@
 }
 
 .dropdown-list.open {
-  max-height: 500px; /* Adjust according to the content's height */
+  max-height: 500px;
 }
 
 .dropdown-list a {
@@ -124,21 +125,24 @@
   margin-bottom: 0;
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries for Mobile View */
 @media (max-width: 768px) {
   .landing {
     height: auto;
     padding: 2rem 0;
+    display: block; /* Prevent layout issues */
   }
 
   .landing--container {
     flex-direction: column;
+    padding: 0;
   }
 
   .landing--img {
-    --img-size: 200px; /* Reduce image size on mobile */
-    left: 50%; /* Center the image */
-    top: 1rem;
+    --img-size: 180px; /* Further reduce image size for mobile */
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
   }
 
   .landing--container-left, .landing--container-right {
@@ -149,11 +153,11 @@
 
   .lcr--content, .lcl--content {
     margin: 1rem;
-    width: 90%; /* Adjust to fit the screen width */
+    width: 90%;
   }
 
   .lcr--content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduce title size */
   }
 
   .lcr--content p {
@@ -170,5 +174,25 @@
 
   .dropdown-list a {
     width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Target iPhone SE, 5, or smaller screens */
+  .landing--img {
+    --img-size: 140px; /* Even smaller image size for tiny screens */
+  }
+
+  .lcr--content h1 {
+    font-size: 1.5rem;
+  }
+
+  .lcr--content p {
+    font-size: 0.9rem;
+  }
+
+  .lcr--content {
+    margin-right: 0;
+    width: 80%;
   }
 }
